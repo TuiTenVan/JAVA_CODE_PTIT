@@ -1,0 +1,25 @@
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class J03012 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        String[] arr = s.split("\\s+");
+        String x = "";
+        String y = "";
+        if(arr.length == 1){
+            x = arr[0];
+            String k = sc.nextLine();
+            y = k;
+        }
+        else{
+            x = arr[0];
+            y = arr[1];
+        }
+        BigInteger a = new BigInteger(x);
+        BigInteger b = new BigInteger(y);
+        BigInteger c = a.add(b);
+        System.out.println(c);
+    }
+}

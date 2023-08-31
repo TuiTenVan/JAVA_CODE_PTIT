@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class J03004{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        sc.nextLine();
+        while(t-- > 0) {
+            String s = sc.nextLine();
+            s = s.trim();
+            s = s.toLowerCase();
+            String[] arr = s.split("\\s+");
+            String res = "";
+            String ans = "";
+            for(int i = 1; i < arr.length; i++) {
+                res += Character.toUpperCase(arr[i].charAt(0));
+                for(int j = 1; j < arr[i].length(); j++) {
+                    res += arr[i].charAt(j);
+                }
+                res += " ";
+            }
+            ans = res.trim();
+            ans += ", " + arr[0].toUpperCase();
+            System.out.println(ans);
+        }
+    }
+}
