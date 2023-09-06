@@ -16,5 +16,6 @@ public class J03016 {
                 System.out.println("0");
              }
         }
+    
     }
 }
