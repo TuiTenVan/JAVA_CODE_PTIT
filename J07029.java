@@ -32,7 +32,7 @@ public class J07029 {
                     }
                 }
             }
-             ArrayList<Map.Entry<Integer, Integer>> l = new ArrayList<>(mp.entrySet());
+            ArrayList<Map.Entry<Integer, Integer>> l = new ArrayList<>(mp.entrySet());
             Collections.sort(l, new Comparator<Map.Entry<Integer, Integer>>() {
                 public int compare(Map.Entry<Integer, Integer> a, Map.Entry<Integer, Integer> b){
                     return b.getKey().compareTo(a.getKey());

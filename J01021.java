@@ -14,7 +14,7 @@ public class J01021 {
         else{
             return (x * a) % mod;
         }
-    }
+    } 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while(sc.hasNext()){

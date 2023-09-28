@@ -27,7 +27,7 @@ public class J07050 {
         Scanner sc = new Scanner(new File("MATHANG.in"));
         int t = sc.nextInt();
         sc.nextLine();
-        List<MatHang> list = new ArrayList<MatHang>();
+        List<J05081> list = new ArrayList<J05081>();
         while(t-- > 0){
             String ten = sc.nextLine();
             String nhom = sc.nextLine();
@@ -35,11 +35,11 @@ public class J07050 {
             String ban1 = sc.nextLine();
             float ban = Float.parseFloat(ban1);
             float mua = Float.parseFloat(mua1);
-            MatHang m = new MatHang(ten, nhom, mua, ban);
+            J05081 m = new J05081(ten, nhom, mua, ban);
             list.add(m);
         }
         list.sort((s1, s2) -> Float.compare(s2.LoiNhuan(), s1.LoiNhuan()));
-        for(MatHang m : list){
+        for(J05081 m : list){
             System.out.println(m);
         }
         sc.close();

@@ -1,0 +1,56 @@
+import java.io.*;
+import java.util.*;
+
+class WordSet {
+    private Set<String> words = new TreeSet<>();
+ 
+    public WordSet(String fileName) throws IOException {
+        FileInputStream fileInputStream = new FileInputStream(fileName);
+        BufferedReader br = new BufferedReader(new InputStreamReader(fileInputStream));
+        String line;
+        while ((line = br.readLine()) != null) {
+            String[] tokens = line.split("\\s+");
+            for (String token : tokens) {
+                String word = token.toLowerCase();
+                words.add(word);
+            }
+        }
+        br.close();
+    }
+
+    public String union(WordSet otherSet) {
+        Set<String> unionSet = new TreeSet<>(this.words);
+        unionSet.addAll(otherSet.words);
+        return setToString(unionSet);
+    }
+
+    public String intersection(WordSet otherSet) {
+        Set<String> intersectionSet = new TreeSet<>(this.words);
+        intersectionSet.retainAll(otherSet.words);
+        return setToString(intersectionSet);
+    }
+
+    private String setToString(Set<String> set) {
+        StringBuilder result = new StringBuilder();
+        for (String word : set) {
+            result.append(word).append(" ");
+        }
+        return result.toString().trim();
+    }
+}
+
+public class J07014 {
+    public static void main(String[] args) throws IOException {
+        WordSet s1 = new WordSet("DATA1.in");
+        WordSet s2 = new WordSet("DATA2.in");
+        System.out.println(s1.union(s2));
+        System.out.println(s1.intersection(s2));
+    }
+    public static void main6246474(String[] args) throws IOException {
+        WordSet s1 = new WordSet("DATA1.in");
+        WordSet s2 = new WordSet("DATA2.in");
+        System.out.println(s1.union(s2));
+        System.out.println(s1.intersection(s2));
+    }
+}
+
