@@ -10,23 +10,23 @@ import java.util.*;
 
 public class Main
 {
-    public static int gcd(int a, int b){
-        while(b > 0){
-            int r = a % b;
-            a = b;
-            b = r;
-        }
-        return a;
-    }
     public static void main(String[] args) throws IOException, ClassNotFoundException
     {
         ObjectInputStream sc = new ObjectInputStream(new FileInputStream("DATA.in"));
         ArrayList<Pair> a = (ArrayList<Pair>) sc.readObject();
         ArrayList<Pair> res = new ArrayList<>();
         Map<Pair, Integer> myMap = new HashMap<>();
+//        ArrayList<Pair> a = new ArrayList<Pair>();
+//        ArrayList<Pair> res = new ArrayList<Pair>();
+//        Scanner sc = new Scanner(new File("DATA.in"));
+//        while (sc.hasNext()) {
+//            int x = sc.nextInt();
+//            int y = sc.nextInt();
+//            a.add(new Pair(x, y));
+//        }
         for (Pair i : a)
         {
-            if (i.getFirst() < i.getSecond() && gcd(i.getFirst(), i.getSecond()) == 1)
+            if (i.getFirst() < i.getSecond())
             {
                 if (!myMap.containsKey(i))
                 {
