@@ -14,20 +14,20 @@ private long a, b;
         }
         return a;
     }
-    public J04003 tong(J04003 other){
+    public PhanSo tong(PhanSo other){
         long tu = other.a * b + other.b * a;
         long mau = b * other.b;
         long tu1 = tu / gcd(tu, mau);
         long mau1 = mau / gcd(tu, mau);
-        return new J04003(tu1 * tu1, mau1 * mau1);
+        return new PhanSo(tu1 * tu1, mau1 * mau1);
     }
 
-    public J04003 sub(J04003 other) {
+    public PhanSo sub(PhanSo other) {
         long tu = a * other.a;
         long mau = b * other.b;
         long tu1 = tu / gcd(tu, mau);
         long mau1 = mau / gcd(tu, mau);
-        return new J04003(tu1, mau1);
+        return new PhanSo(tu1, mau1);
     }
     public String toString() {
         return a + "/" + b;
@@ -41,12 +41,12 @@ public class J04014 {
         while(t-- > 0) {
             long a = sc.nextLong();
             long b = sc.nextLong();
-            J04003 x = new J04003(a, b);
+            PhanSo x = new PhanSo(a, b);
             long c = sc.nextLong();
             long d = sc.nextLong();
-            J04003 y = new J04003(c, d);
-            J04003 k = x.tong(y);
-            J04003 v = x.sub(y).sub(k);
+            PhanSo y = new PhanSo(c, d);
+            PhanSo k = x.tong(y);
+            PhanSo v = x.sub(y).sub(k);
             System.out.println(k + " " + v);
         }
     }

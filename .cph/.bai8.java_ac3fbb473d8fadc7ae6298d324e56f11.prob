@@ -1,0 +1,1 @@
+{"name":"Local: bai8","url":"c:\\Users\\nguye\\OneDrive\\Documents\\JAVA\\JAVA_PTIT\\bai8.java","tests":[{"id":1697076872512,"input":"2\n8\n2 5 2 8 5 6 8 8\n10\n2 5 2 6 -1 9999999 5 8 8 8","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\nguye\\OneDrive\\Documents\\JAVA\\JAVA_PTIT\\bai8.java","group":"local","local":true}

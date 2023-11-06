@@ -23,7 +23,7 @@ public class J05006 {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
         sc.nextLine();
-        ArrayList<J04007> list = new ArrayList<J04007>();
+        ArrayList<NhanVien> list = new ArrayList<NhanVien>();
         while(t-- > 0){
             String name = sc.nextLine();
             String gt = sc.nextLine();
@@ -31,10 +31,10 @@ public class J05006 {
             String add = sc.nextLine();
             String ma = sc.nextLine();
             String day = sc.nextLine();
-            J04007 n = new J04007(name, gt, birth, add, ma, day);
+            NhanVien n = new NhanVien(name, gt, birth, add, ma, day);
             list.add(n);
         }
-        for(J04007 n : list){
+        for(NhanVien n : list){
             System.out.println(n);
         }
     }
