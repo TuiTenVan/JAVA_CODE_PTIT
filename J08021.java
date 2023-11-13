@@ -8,14 +8,14 @@ public class J08021 {
         sc.nextLine();
         while (t-- > 0) {
             String s = sc.nextLine();
-           int max_length = 0;
+            int max_length = 0;
             Stack<Integer> stack = new Stack<>();
             stack.push(-1);  
 
             for (int i = 0; i < s.length(); i++) {
                 char c = s.charAt(i);
 
-                if (c == '(') {
+                if (c == '(' || c == '[') {
                     stack.push(i);
                 } else {
                     stack.pop();

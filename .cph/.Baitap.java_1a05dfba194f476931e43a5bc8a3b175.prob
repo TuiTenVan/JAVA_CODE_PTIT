@@ -1,0 +1,1 @@
+{"name":"Local: Baitap","url":"c:\\Users\\nguye\\OneDrive\\Documents\\JAVA\\JAVA_PTIT\\Baitap.java","tests":[{"id":1699599242026,"input":"4\n[()]\n[(])\n[[])(]\n[[]()]","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\nguye\\OneDrive\\Documents\\JAVA\\JAVA_PTIT\\Baitap.java","group":"local","local":true}

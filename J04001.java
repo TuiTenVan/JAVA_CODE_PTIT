@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Point {
+class Point {
     private double x1;
     private double y1;
     private double x2;
@@ -19,6 +19,8 @@ public class Point {
     public String toString() {
         return String.format("%.4f", distance(x1, y1, x2, y2));
     }
+}
+public class J04001 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();

@@ -2,7 +2,7 @@ import java.io.File;
 import java.util.List;
 import java.util.*;
 
-public class MonHoc {
+class MonHoc {
     private String ma, ten;
     private int tinchi;
     public MonHoc(String ma, String ten, int tinchi){
@@ -11,13 +11,15 @@ public class MonHoc {
         this.tinchi = tinchi;
     }
     public String getTen(){
-        return this.ma;
+        return this.ten;
     }
     public String toString() {
         return ma + " " + ten + " " + tinchi;
     }
+}
+public class J07034 {
     public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(new File("DN.in"));
+        Scanner sc = new Scanner(new File("MONHOC.in"));
         int t = sc.nextInt();
         sc.nextLine();
         List<MonHoc> lists = new ArrayList<>();

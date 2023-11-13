@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ThuNhap {
+class ThuNhap {
     private String ma, name;
     private long fee;
     public ThuNhap(String ma, String name, long fee) {
@@ -24,7 +24,8 @@ public class ThuNhap {
         luong = Integer.parseInt(x) * fee + k;
         return ma + " " + name + " " + Integer.parseInt(x)  + " " + k + " " + luong;
     }
-
+}
+public class J04015{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String ma = sc.nextLine();

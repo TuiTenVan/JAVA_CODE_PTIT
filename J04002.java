@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Rectange {
+class Rectange {
     private int width, height;
     private String color;
     public Rectange(int width, int height, String color) {
@@ -27,13 +27,15 @@ public class Rectange {
     public String toString() {
         return chuVi() + " " + dienTich() + " " + getColor();
     }
+}
+public class J04002{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int width = sc.nextInt();
         int height = sc.nextInt();
         String color = sc.next();
         Rectange x = new Rectange(width, height, color);
-        if(width < 0 || height < 0){
+        if(width <= 0 || height <= 0){
             System.out.println("INVALID");
         }
         else System.out.println(x);

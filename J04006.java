@@ -1,12 +1,12 @@
 
 import java.util.Scanner;
 
-public class sinhVien{
+class SinhVien{
     private String name;
     private String lop;
     private String birth;
     private double gpa;
-    public sinhVien(String name, String lop, String birth, double gpa){
+    public SinhVien(String name, String lop, String birth, double gpa){
         this.name = name;
         this.lop = lop;
         this.birth = birth;
@@ -27,13 +27,15 @@ public class sinhVien{
     public String toString(){
         return "B20DCCN001 " + name + " " + lop + " " + birth + " " + String.format("%.2f", gpa); 
     }
+}
+public class J04006 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String name = sc.nextLine();
         String lop = sc.nextLine();
         String birth = sc.nextLine();
         double gpa = sc.nextDouble();
-        sinhVien sv = new sinhVien(name, lop, birth, gpa);
+        SinhVien sv = new SinhVien(name, lop, birth, gpa);
         sv.chuanHoa();
         System.out.println(sv);
     }
