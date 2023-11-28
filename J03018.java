@@ -6,21 +6,21 @@ public class J03018 {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
         while (t-- > 0) {
-            int n = sc.nextInt();
-            BigInteger ans = computeValue(n);
-            System.out.println(ans.mod(new BigInteger("5")));
+            String n = sc.next();
+            int k = 0;
+            if(n.length() == 1){
+                k = Integer.parseInt(n);
+            }
+            else{
+                k = Integer.parseInt(n.substring(n.length() - 2));
+            }
+            if(k % 4 == 0){
+                System.out.println("4");
+            }
+            else{
+                System.out.println("0");
+            }
         }
     }
 
-    public static BigInteger computeValue(int n) {
-        BigInteger result = BigInteger.ONE;
-        BigInteger base = new BigInteger("1");
-
-        for (int i = 1; i <= n; i++) {
-            base = base.add(BigInteger.ONE);
-            result = result.add(base.pow(n));
-        }
-
-        return result;
-    }
 }
