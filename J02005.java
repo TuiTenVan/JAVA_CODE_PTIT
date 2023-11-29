@@ -8,7 +8,7 @@ public class J02005 {
         int[] a = new int[n];        
         int[] b = new int[m];        
         TreeSet<Integer> h = new TreeSet<Integer>();
-        // TreeSet<Integer> ans = new TreeSet<Integer>();
+        TreeSet<Integer> ans = new TreeSet<Integer>();
         for(int i = 0; i < n; i++){
             a[i] = sc.nextInt();
         }
@@ -19,9 +19,11 @@ public class J02005 {
             h.add(x);
         }
         for(int x : b){
-            h.add(x);
+            if(h.contains(x)){
+                ans.add(x);
+            }
         }
-        for(int x : h){
+        for(int x : ans){
             System.out.print(x + " ");
         }
         System.out.println();
