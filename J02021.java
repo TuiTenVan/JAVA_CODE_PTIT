@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class J02020 {
+public class J02021 {
     public static void sinh(int n, int k){
         int[] a = new int[k + 1];
         for(int i = 1; i <= k; i++){
