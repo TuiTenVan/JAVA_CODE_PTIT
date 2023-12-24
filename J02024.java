@@ -1,48 +1,74 @@
-import java.util.*;
+
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class J02024 {
-    static int n;
-    static int[] a = new int[200000];
-    static List<Integer> x = new ArrayList<>();
-    static List<List<Integer>> ans = new ArrayList<>();
-    static Map<List<Integer>, Integer> m = new HashMap<>();
-
-    static void Try(int k, int s) {
-        for (int i = k + 1; i <= n; i++) {
-            Try(i, s);
-            x.add(a[i]);
-            if ((s + a[i]) % 2 == 1 && !m.containsKey(x)) {
-                m.put(new ArrayList<>(x), 1);
-                ans.add(new ArrayList<>(x));
-            }
-            Try(i, s + a[i]);
-            x.remove(x.size() - 1);
-        }
-    }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
         while (t-- > 0) {
-            ans.clear();
-            m.clear();
-            n = sc.nextInt();
-            for (int i = 1; i <= n; i++)
+            int n = sc.nextInt();
+            int[] a = new int[n];
+            int[] f = new int[n];
+            for (int i = 0; i < n; i++)
                 a[i] = sc.nextInt();
-            Arrays.sort(a, 1, n + 1);
-            for (int i = 1; i <= n / 2; i++) {
-                int temp = a[i];
-                a[i] = a[n - i + 1];
-                a[n - i + 1] = temp;
-            }
-            Try(0, 0);
+            sort(a);
+            backtrack(f, 0, n, a);
 
-            for (List<Integer> subarr : ans) {
-                for (int num : subarr) {
-                    System.out.print(num + " ");
+        }
+    }
+
+    private static void sort(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            int max = arr[i];
+            int maxIndex = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] > max) {
+                    max = arr[j];
+                    maxIndex = j;
+                }
+            }
+            int temp = arr[i];
+            arr[i] = arr[maxIndex];
+            arr[maxIndex] = temp;
+        }
+    }
+
+    private static boolean check(int[] f, int[] a, int n) {
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            if (f[i] == 1)
+                sum += a[i];
+        }
+        if (sum % 2 == 0)
+            return false;
+        else
+            return true;
+    }
+
+    private static void backtrack(int[] f, int i, int n , int[] a) {
+        // Nếu xâu đã đạt được độ dài mong muốn
+        if (i == n) {
+            if (check(f, a, n)) {
+                for (int j = 0; j < n; j++) {
+                    if (f[j] == 1){
+                        System.out.print(a[j] + " ");
+                    }
                 }
                 System.out.println();
             }
+            // System.out.println(Arrays.toString(f));
+
+            return;
         }
+
+
+        // Thêm giá trị 0 vào xâu
+        f[i] = 0;
+        backtrack(f, i + 1, n , a);
+
+        // Thêm giá trị 1 vào xâu
+        f[i] = 1;
+        backtrack(f, i + 1, n , a);
     }
 }

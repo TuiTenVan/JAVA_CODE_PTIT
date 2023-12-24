@@ -2,34 +2,33 @@ import java.util.*;
 
 class IntSet{
     private TreeSet<Integer> set;
-    public IntSet(int[] a) {
+    public IntSet(int[]a ){
         set = new TreeSet<>();
-        for (int i = 0; i < a.length; i++){
+        for(int i = 0; i < a.length; i++){
             set.add(a[i]);
         }
     }
-    public IntSet union(IntSet other) {
-        Set<Integer> result = new TreeSet<>(this.set);
-        result.addAll(other.set);
-        int[] resultArray = new int[result.size()];
+    public IntSet union(IntSet other){
+        Set<Integer> res = new TreeSet<>(this.set);
+        res.addAll(other.set);
+        int[] a = new int[res.size()];
         int index = 0;
-        for (int num : result) {
-            resultArray[index] = num;
+        for (int num : res) {
+            a[index] = num;
             index++;
         }
-        return new IntSet(resultArray);
+        return new IntSet(a);
     }
-
     @Override
-    public String toString() {
+    public String toString(){
         StringBuilder sb = new StringBuilder();
-        for (int num : set) {
-            sb.append(num).append(" ");
+        for(int i : set){
+            sb.append(i).append(" ");
         }
         return sb.toString().trim();
     }
 }
-public class J04021 {
+public class J04021{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt(), m = sc.nextInt(), a[] = new int[n], b[] = new int[m];

@@ -66,10 +66,8 @@ public class J07053 {
         while(t-- > 0){
             String name = sc.nextLine().trim();
             String birth = sc.nextLine().trim();
-            String diems = sc.nextLine().trim();
-            double diemlt = Double.parseDouble(diems);
-            String diem = sc.nextLine().trim();
-            double diemth = Double.parseDouble(diem);
+            double diemlt = Double.parseDouble(sc.nextLine().trim());
+            double diemth = Double.parseDouble(sc.nextLine().trim());
             Person p = new Person(name, birth, diemlt, diemth);
             p.ChuanHoa();
             p.ChuanTen();
